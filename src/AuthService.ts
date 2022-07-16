@@ -188,9 +188,9 @@ export class AuthService<TIDToken = JWTIDToken> {
     } = this.props
 
     return createPKCECodes().then((pkce) => {
-      window.localStorage.setItem('pkce', JSON.stringify(pkce))
-      window.localStorage.setItem('preAuthUri', window.location.href)
-      window.localStorage.removeItem('auth')
+      window[this.cacheLocation].setItem('pkce', JSON.stringify(pkce))
+      window[this.cacheLocation].setItem('preAuthUri', window.location.href)
+      window[this.cacheLocation].removeItem('auth')
       const { codeChallenge } = pkce
 
       const query = {
