@@ -1,6 +1,6 @@
 {
   "name": "oauth2-pkce-react",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "description": "Authenticate against generic OAuth2 using PKCE",
   "author": "Roman Revunenkov <rev4ge@outlook.com>",
   "contributors": ["Gardner Bickford <gardner@bickford.nz>"],
