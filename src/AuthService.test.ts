@@ -1,4 +1,4 @@
-import { AuthService, AuthTokens, AuthServiceProps } from './AuthService'
+import { AuthService, AuthServiceProps } from './AuthService'
 
 // import tokens from './__fixtures__/tokens.json'
 
@@ -10,14 +10,6 @@ const props: AuthServiceProps = {
   provider: 'http://oauth2provider/',
   redirectUri: 'http://localhost/',
   scopes: ['openid', 'profile']
-}
-
-const stubTokens: AuthTokens = {
-  accessToken: 'accessToken',
-  idToken: 'idToken',
-  refreshToken: 'refreshToken',
-  expiresIn: 3600,
-  tokenType: 'Bearer'
 }
 
 // const stubToken =
