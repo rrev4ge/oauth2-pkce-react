@@ -1,5 +1,5 @@
 import React from 'react'
-import { AuthProvider, AuthService } from 'react-oauth2-pkce'
+import { AuthProvider, AuthService } from 'oauth2-pkce-react'
 
 import { Routes } from './Routes';
 
