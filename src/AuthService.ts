@@ -176,8 +176,15 @@ export class AuthService<TIDToken = JWTIDToken> {
     this.authorize()
   }
 
+  async profile(urlPath = 'profile', target = '_blank'): Promise<boolean> {
+    const { provider } = this.props
+    const url = `${provider}/${urlPath}`
+    window.open(url, target)
+    return true
+  }
+
   // this will do a full page reload and to to the OAuth2 provider's login page and then redirect back to redirectUri
-  authorize(): Promise<boolean> {
+  async authorize(): Promise<boolean> {
     const {
       clientId,
       provider,
@@ -187,7 +194,7 @@ export class AuthService<TIDToken = JWTIDToken> {
       audience
     } = this.props
 
-    return createPKCECodes().then((pkce) => {
+    const result = await createPKCECodes().then((pkce) => {
       window[this.cacheLocation].setItem('pkce', JSON.stringify(pkce))
       window[this.cacheLocation].setItem('preAuthUri', window.location.href)
       window[this.cacheLocation].removeItem('auth')
@@ -209,6 +216,7 @@ export class AuthService<TIDToken = JWTIDToken> {
       window.location.replace(url)
       return true
     })
+    return result
   }
 
   // this happens after a full page reload. Read the code from localstorage
