@@ -1,16 +1,17 @@
-# react-oauth2-pkce
+# react-oauth2-pkce-btoa
 
-> Authenticate against generic OAuth2 using PKCE
+> Authenticate against generic OAuth2 using PKCE and btoa cript method from webApi
 
 ## Install
 
 ```bash
-npm install --save oauth2-pkce-react
+npm install --save react-oauth2-pkce-btoa
 ```
 
 ## Usage
 
 ```tsx
+
 import React from 'react'
 import { AuthProvider, AuthService } from 'react-oauth2-pkce'
 
@@ -21,7 +22,8 @@ const authService = new AuthService({
   location: window.location,
   provider: process.env.REACT_APP_PROVIDER || 'https://sandbox.auth.ap-southeast-2.amazoncognito.com/oauth2',
   redirectUri: process.env.REACT_APP_REDIRECT_URI || window.location.origin,
-  scopes: ['openid', 'profile']
+  scopes: ['openid', 'profile'],
+  cacheStorage: 'localStorage', // Optional ('localStorage' || 'sessionStorage') - default 'localStorage'
 });
 
 const App = () => {
@@ -32,3 +34,4 @@ const App = () => {
   )
 }
 
+```
