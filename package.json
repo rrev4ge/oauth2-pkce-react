@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
-  "name": "oauth2-pkce-react",
-  "version": "2.1.3",
-=======
   "name": "react-oauth2-pkce-btoa",
-  "version": "1.0.1",
->>>>>>> rrev4ge_rewrite
+  "version": "1.0.2",
   "description": "Authenticate against generic OAuth2 using PKCE",
   "author": "rrev4ge <rev4ge@outlook.com>",
   "contributors": ["Gardner Bickford <gardner@bickford.nz>"],
